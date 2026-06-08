@@ -1,0 +1,9 @@
+{
+  "domains": [
+    { "id": 1, "name": "example-shop.com" },
+    { "id": 2, "name": "my-portfolio.ru" },
+    { "id": 3, "name": "tech-blog.io" },
+    { "id": 4, "name": "startup-notes.org" },
+    { "id": 5, "name": "creative-studio.dev" }
+  ]
+}

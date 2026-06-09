@@ -1,9 +1,49 @@
 {
   "domains": [
-    { "id": 1, "name": "example-shop.com" },
-    { "id": 2, "name": "my-portfolio.ru" },
-    { "id": 3, "name": "tech-blog.io" },
-    { "id": 4, "name": "startup-notes.org" },
-    { "id": 5, "name": "creative-studio.dev" }
-  ]
+    {
+      "id": 1,
+      "domain": "google.com",
+      "status": "valid",
+      "expires_at": "2025-12-01",
+      "issuer": "Google Trust",
+      "days_left": 180
+    },
+    {
+      "id": 2,
+      "domain": "expired-site.com",
+      "status": "expired",
+      "expires_at": "2024-01-15",
+      "issuer": "Let's Encrypt",
+      "days_left": -140
+    },
+    {
+      "id": 3,
+      "domain": "expiring-soon.ru",
+      "status": "expiring_soon",
+      "expires_at": "2025-06-20",
+      "issuer": "ZeroSSL",
+      "days_left": 15
+    },
+    {
+      "id": 4,
+      "domain": "new-domain.io",
+      "status": "pending",
+      "expires_at": null,
+      "issuer": null,
+      "days_left": null
+    },
+    {
+      "id": 5,
+      "domain": "broken-site.net",
+      "status": "error",
+      "expires_at": null,
+      "issuer": null,
+      "days_left": null
+    }
+  ],
+  "user": {
+    "id": 1,
+    "name": "Admin",
+    "email": "admin@example.com"
+  }
 }

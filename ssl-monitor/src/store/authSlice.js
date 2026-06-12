@@ -1,54 +1,63 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
- const loginThunk = createAsyncThunk(
+export const loginThunk = createAsyncThunk(
     'auth/login',
-    async (credentials) => {
-        try{
-        const responce = await fetch('/login',{
-        method: 'POST',
-        header:{
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials),
-        });
-
-    if(!responce.ok){
-        const err = await responce.json.catch(() => ({}));
-        throw rejectWithValue(err.message || 'Ошибка входа');
-    }
-
-   const data = await responce.json();
-
-    if(data.token){
-        localStorage.setItem('token', data.token);
-    }
+    async ({ email, password }, { rejectWithValue }) => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        if (!email || !password) {
+            throw rejectWithValue('Email и пароль обязательны');
         }
-    catch (error){throw error; }
+        return {
+            token: 'mock-token-123',
+            user: {
+                id: 1,
+                name: 'Admin',
+                email: email
+            }
+        };
     }
-)
+);
 
-export const authSlice = createSlice({
-    name: 'authSlice',
-    initialState:{
-        User: null,
-        Token: null,
-        Loading: false,
-        Error:null,
+const authSlice = createSlice({
+    name: 'auth',
+    initialState: {
+        user: null,
+        token: null,
+        loading: false,
+        error: null
     },
-    reducers:{
-        setCredentials({ user, token }){
-            this.User = user
-            this.Token = token
-            this.Loading = false
-            this.Error = null
+
+    reducers: {
+        setCredentials: (state, action) => {
+            const { user, token } = action.payload;
+            state.user = user;
+            state.token = token;
         },
-
-        logout(){
-            this.User = null
-            this.Token = null
-            this.Loading = false
-            this.Error = null
+        logout: (state) => {
+            state.user = null;
+            state.token = null;
         }
-    }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(loginThunk.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(loginThunk.fulfilled, (state, action) => {
+                state.loading = false;
+                const { user, token } = action.payload;
 
-})
+                localStorage.setItem('access_token', token);
+                state.user = user;
+                state.token = token;
+            })
+            .addCase(loginThunk.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload || 'Ошибка при входе';
+            });
+    }
+});
+
+export const { setCredentials, logout } = authSlice.actions;
+export default authSlice.reducer;

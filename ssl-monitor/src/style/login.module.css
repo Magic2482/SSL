@@ -1,0 +1,55 @@
+
+body{
+    background: radial-gradient(circle at center, #47a9c2 0%, #000000 100%);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    margin: 0 auto;
+    padding-top:200px ;
+}
+
+.userLogin{
+    color:white;
+    font-weight: 900;
+    font-size: 40px;
+    font-family: Inter;
+}
+
+.formLogin form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(20, 24, 26, 0.3);
+    padding: 80px 50px;
+    border-radius: 10px;
+
+
+}
+
+input{
+    position: relative;
+    bottom: 60px;
+    margin-bottom: 10px;
+    padding: 10px 40px;
+    background: #bebebe;
+    border-radius: 40px;
+    border: solid 1px #ffffff;
+}
+
+
+.formLogin button{
+    background: #ffffff;
+        padding: 10px 100px;
+    border-radius: 40px;
+    font-family: Inter;
+}
+
+.error{
+
+    font-family: Cambria;
+    color: red;
+}

@@ -1,0 +1,18 @@
+.box{
+    padding: 40px;
+    background: #9f9f9f;
+    width: 500px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.text{
+    position: relative;
+    width: 160px;
+    margin: 0 auto;
+    color: white;
+    font-size: 30px;
+    top: 70px;
+}

@@ -1,4 +1,6 @@
 .box{
+    display: flex;
+    flex-direction: column;
     padding: 40px;
     background: #9f9f9f;
     width: 500px;
@@ -8,6 +10,11 @@
     border-radius: 20px;
 }
 
+.box div{
+
+}
+
+
 .text{
     position: relative;
     width: 160px;
@@ -15,4 +22,11 @@
     color: white;
     font-size: 30px;
     top: 70px;
+}
+
+.loading{
+    position: relative;
+    margin: 0 auto;
+    font-size: 30px;
+    align-items: center;
 }

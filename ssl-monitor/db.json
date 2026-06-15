@@ -1,7 +1,7 @@
 {
   "domains": [
     {
-      "id": 1,
+      "id": "1",
       "domain": "google.com",
       "status": "valid",
       "expires_at": "2025-12-01",
@@ -9,7 +9,7 @@
       "days_left": 180
     },
     {
-      "id": 2,
+      "id": "2",
       "domain": "expired-site.com",
       "status": "expired",
       "expires_at": "2024-01-15",
@@ -17,7 +17,7 @@
       "days_left": -140
     },
     {
-      "id": 3,
+      "id": "3",
       "domain": "expiring-soon.ru",
       "status": "expiring_soon",
       "expires_at": "2025-06-20",
@@ -25,7 +25,7 @@
       "days_left": 15
     },
     {
-      "id": 4,
+      "id": "4",
       "domain": "new-domain.io",
       "status": "pending",
       "expires_at": null,
@@ -33,7 +33,7 @@
       "days_left": null
     },
     {
-      "id": 5,
+      "id": "5",
       "domain": "broken-site.net",
       "status": "error",
       "expires_at": null,
@@ -41,9 +41,232 @@
       "days_left": null
     }
   ],
-  "user": {
-    "id": 1,
-    "name": "Admin",
-    "email": "admin@example.com"
-  }
+  "user": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@example.com"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "f10gVDdvBVE"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "PV_X08Oid0w"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "J3XsFM-Pghk"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "YR6NxktQKoM"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "z2_I_SdS66g"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "Mey4cJW2m6M"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "nmEQbuA44zs"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "APD9CLa-XBQ"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "ZxiPfTv8TVo"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "YpAREUklJHk"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "aU6FEUHRS7w"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "XNj_4ptHdt0"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "XTFVaiFqg7Y"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "PIbyPAfL5w0"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "1be2-Fc6jqM"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "wY0WVig20yM"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "EbTfXlC-3xE"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "bBU0XZ0e9A8"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "_t58owG45Qs"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "PHQHPY9L-OI"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "YnJ3g6ap4ao"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "HeDfMZNA_xM"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "C4rq--_xWkU"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "x_61Zp0otNA"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "bRiRSZzAwYE"
+    },
+    {
+      "title": "Тест",
+      "author": "Я",
+      "id": "v5WUicaMWKA"
+    },
+    {
+      "id": "IPDX6Rru1rQ"
+    },
+    {
+      "id": "ZzJBqQdNRC8"
+    },
+    {
+      "id": "2hHiCHfA9e8"
+    },
+    {
+      "id": "3u3KgH6Y2ik"
+    },
+    {
+      "id": "DatT2wx2GSM"
+    },
+    {
+      "id": "YfGZCokL1HQ"
+    },
+    {
+      "id": "0SJTGkN8E28"
+    },
+    {
+      "id": "aD5LoRx9D4Q"
+    },
+    {
+      "id": "BRWwmkitAy4"
+    },
+    {
+      "id": "kXq09zNIbgc"
+    },
+    {
+      "id": "Q1nzBLujLvg"
+    },
+    {
+      "id": "aKBmM-EUOm0"
+    },
+    {
+      "id": "hvT_Lt84g9c"
+    },
+    {
+      "id": "QhK_fetg8AE"
+    },
+    {
+      "id": "SxW-oa9VQN4"
+    },
+    {
+      "id": "vNHvDuBdKQw"
+    },
+    {
+      "id": "FXGLcwAdGo0"
+    },
+    {
+      "id": "PKbQGupmFYY"
+    },
+    {
+      "id": "lwIOvkpho-k"
+    },
+    {
+      "id": "wCVGdO6CPYQ"
+    },
+    {
+      "id": "wkzwHWp3EDc"
+    },
+    {
+      "id": "5tAVMGpkBi0"
+    },
+    {
+      "id": "EfeED-VpD6k"
+    },
+    {
+      "id": "UCVTx_zEhdg"
+    },
+    {
+      "id": "lubkaAhT96k"
+    },
+    {
+      "id": "LRh730l8VyQ"
+    },
+    {
+      "id": "2_nEBmUPiaE"
+    },
+    {
+      "id": "hvsIZntnHMo"
+    },
+    {
+      "id": "vQlsA-ovM9E"
+    },
+    {
+      "id": "qsPhb4qlMJ4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

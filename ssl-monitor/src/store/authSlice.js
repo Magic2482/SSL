@@ -1,9 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 export const loginThunk = createAsyncThunk(
     'auth/login',
     async ({ email, password }, { rejectWithValue }) => {
-        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        fetch(`${BASE_URL}/user`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(),
+        })
         if (!email || !password) {
             throw rejectWithValue('Email и пароль обязательны');
         }
@@ -45,7 +52,7 @@ const authSlice = createSlice({
                 state.error = null;
             })
             .addCase(loginThunk.fulfilled, (state, action) => {
-                state.loading = false;
+                state.loading = true;
                 const { user, token } = action.payload;
 
                 localStorage.setItem('access_token', token);

@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from "./authSlice.js";
-// import domainsSlice from "./domainsSlice.js";
+import domainsReducer from "../store/domainsSlice.js";
 
     export default configureStore({
         reducer: {
             auth: authReducer,
+            domains: domainsReducer
         },
     });

@@ -2,6 +2,7 @@ import style from "../style/DashboardPage.module.css"
 import {useEffect} from "react";
 import fetchDomains, {domainsThink} from "../store/domainsSlice.js";
 import {useDispatch, useSelector} from "react-redux";
+import DomainTable from "../components/DomainTable";
 
 const DashboardPage = () =>{
 
@@ -26,8 +27,9 @@ const DashboardPage = () =>{
             <div className={style.text}>SSL Monitor </div>
             <div className={style.box}>
                 {items.map((item) => (
-                    <div key={item.id}>{item.domain} {item.status}</div>
+                    <DomainTable key={item.id} item={item}/>
                 ))}
+
             </div>
         </>
     )

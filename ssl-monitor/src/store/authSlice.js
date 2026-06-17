@@ -1,4 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import {useNavigate} from "react-router-dom";
+
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -6,7 +8,7 @@ export const loginThunk = createAsyncThunk(
     'auth/login',
     async ({ email, password }, { rejectWithValue }) => {
 
-        fetch(`${BASE_URL}/user`, {
+        await fetch(`${BASE_URL}/user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(),
@@ -41,6 +43,7 @@ const authSlice = createSlice({
             state.token = token;
         },
         logout: (state) => {
+            localStorage.token = null;
             state.user = null;
             state.token = null;
         }
@@ -55,7 +58,7 @@ const authSlice = createSlice({
                 state.loading = true;
                 const { user, token } = action.payload;
 
-                localStorage.setItem('access_token', token);
+                localStorage.setItem('token', token);
                 state.user = user;
                 state.token = token;
             })

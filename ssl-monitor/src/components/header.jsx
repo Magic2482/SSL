@@ -1,15 +1,21 @@
 import {useDispatch} from "react-redux";
 import {logout} from "../store/authSlice.js";
+import style from "../style/header.module.css"
+import {useSelector} from "react-redux";
 
 const Header = () => {
+    const email = useSelector(state => state.auth.user?.email);
     const dispatch = useDispatch();
     const handle = () => {
         dispatch(logout())
     }
+
     return (
         <>
-            <h3 style={{color:'#643999'}}>SSL MONITOR</h3>
-            <button onClick={handle } >logout</button>
+            <div className={style.header}>
+                <h3>{email ? email : "SSL MONITOR"}</h3>
+                <button onClick={handle}>logout</button>
+            </div>
         </>
     )
 }

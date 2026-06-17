@@ -1,0 +1,11 @@
+.table {
+    table-layout: fixed;
+}
+table th{
+    width: 25%;
+}
+
+.table th{
+   border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}

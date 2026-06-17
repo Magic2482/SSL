@@ -1,0 +1,15 @@
+.header{
+    align-items: center;
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.header h3 {
+    color: #d98512;
+}
+
+.header button {
+
+}

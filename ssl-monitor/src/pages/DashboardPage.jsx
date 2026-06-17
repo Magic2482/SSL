@@ -26,10 +26,19 @@ const DashboardPage = () =>{
         <>
             <div className={style.text}>SSL Monitor </div>
             <div className={style.box}>
+
+                {items.length === 0 ? <div>Доменов нет</div> : (
+                    <table>
+                        <tr>
+                            <th>Домен</th>
+                            <th>Статус</th>
+                            <th>Истекает</th>
+                            <th>Дней осталось</th>
+                        </tr>
+                    </table>)}
                 {items.map((item) => (
                     <DomainTable key={item.id} item={item}/>
-                ))}
-
+                    ))}
             </div>
         </>
     )

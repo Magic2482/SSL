@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import {useNavigate} from "react-router-dom";
 
 
 const BASE_URL = import.meta.env.VITE_API_URL;
@@ -35,7 +34,6 @@ const authSlice = createSlice({
         loading: false,
         error: null
     },
-
     reducers: {
         setCredentials: (state, action) => {
             const { user, token } = action.payload;

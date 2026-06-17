@@ -1,25 +1,23 @@
 
+import StatusBadge from "../components/StatusBadge.jsx";
+import style from "../style/table.module.css";
+
  const DomainTable = (props) => {
+     const RuData = new Date(props.item.expires_at).toLocaleString('ru-RU')
     return(
         <>
-            <table>
-                <thead>
-                <tr>
-                    <th>Домен</th>
-                    <th>Статус</th>
-                    <th>Истекает</th>
-                    <th>Дней осталось</th>
-                </tr>
-                </thead>
+            <table className={style.table}>
                 <tbody>
-                    <tr>
-                        <th>{props.item.domain}</th>
-                        <th>{props.item.status}</th>
-                    </tr>
+                <tr>
+                    <th>{props.item.domain}</th>
+                    <th><StatusBadge item={props.item.status}/></th>
+                    {props.item.expires_at ? <th>{RuData}</th> : <th>-</th>}
+                    {props.item.days_left ? <th>{props.item.days_left}</th> : <th>-</th>}
+                </tr>
                 </tbody>
             </table>
         </>
     )
  }
 
- export default DomainTable
+export default DomainTable

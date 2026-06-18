@@ -7,6 +7,7 @@ import DomainTable from "../components/DomainTable";
 const DashboardPage = () =>{
 
     const dispatch = useDispatch();
+    debugger
     const {items, loading, error} = useSelector(state => state.domains);
     useEffect(() => {
         dispatch(domainsThink())

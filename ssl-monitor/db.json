@@ -39,6 +39,46 @@
       "expires_at": null,
       "issuer": null,
       "days_left": null
+    },
+    {
+      "id": "6",
+      "domain": "google.com",
+      "status": "valid",
+      "expires_at": "2025-12-01",
+      "issuer": "Google Trust",
+      "days_left": 180
+    },
+    {
+      "id": "7",
+      "domain": "expired-site.com",
+      "status": "expired",
+      "expires_at": "2024-01-15",
+      "issuer": "Let's Encrypt",
+      "days_left": -140
+    },
+    {
+      "id": "8",
+      "domain": "expiring-soon.ru",
+      "status": "expiring_soon",
+      "expires_at": "2025-06-20",
+      "issuer": "ZeroSSL",
+      "days_left": 15
+    },
+    {
+      "id": "9",
+      "domain": "new-domain.io",
+      "status": "pending",
+      "expires_at": null,
+      "issuer": null,
+      "days_left": null
+    },
+    {
+      "id": "10",
+      "domain": "broken-site.net",
+      "status": "error",
+      "expires_at": null,
+      "issuer": null,
+      "days_left": null
     }
   ],
   "user": [
@@ -46,6 +86,87 @@
       "id": "1",
       "name": "Admin",
       "email": "admin@example.com"
+    },
+    {
+      "id": "EGjGDCzyYw8"
+    },
+    {
+      "id": "VcmkyPQuKJM"
+    },
+    {
+      "id": "N8ZOMrePyeE"
+    },
+    {
+      "email": "admin@example.com",
+      "password": "asdasda",
+      "id": "P4bspMZumgo"
+    },
+    {
+      "id": "3ho4Maha_g4"
+    },
+    {
+      "id": "AGK9fxcgmC0"
+    },
+    {
+      "id": "cig-rYn1m_w"
+    },
+    {
+      "id": "NCi-fl-_EfM"
+    },
+    {
+      "id": "pO5dukXwZGs"
+    },
+    {
+      "id": "ujaKJlQsQZM"
+    },
+    {
+      "id": "7QhL4FyRXWs"
+    },
+    {
+      "id": "30YDnH-oy7A"
+    },
+    {
+      "id": "UtBg07IDHZI"
+    },
+    {
+      "id": "sRpsg7Ggn_k"
+    },
+    {
+      "id": "R4uulAHWQDo"
+    },
+    {
+      "id": "Jh0bXMhdVuw"
+    },
+    {
+      "id": "MWEsMpwYdXM"
+    },
+    {
+      "id": "4JNa8k4DYJM"
+    },
+    {
+      "id": "sH2TKSJkh0Q"
+    },
+    {
+      "id": "JRvgUhNmrXY"
+    },
+    {
+      "id": "q5GTEVT_Gf0"
+    },
+    {
+      "id": "_yRjidZDvdo"
+    },
+    {
+      "id": "kTxxCUU8Icw"
+    },
+    {
+      "id": "f6bqp-S4kc4"
+    },
+    {
+      "id": "WS7f8mG9SqM"
+    },
+    {
+      "id": "L9sXg2Ibm6E"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,17 +1,18 @@
 import style from "../style/DashboardPage.module.css"
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import fetchDomains, {domainsThink} from "../store/domainsSlice.js";
 import {useDispatch, useSelector} from "react-redux";
 import DomainTable from "../components/DomainTable";
+import Pagination from "../components/Pagination.jsx";
 
 const DashboardPage = () =>{
 
+    let [page, setPage] = useState(1);
     const dispatch = useDispatch();
-    debugger
     const {items, loading, error} = useSelector(state => state.domains);
     useEffect(() => {
-        dispatch(domainsThink())
-    }, [dispatch])
+        dispatch(domainsThink(page));
+    }, [dispatch, page])
     if(loading) return (
         <>
             <div className={style.text}>SSL Monitor </div>
@@ -40,7 +41,11 @@ const DashboardPage = () =>{
                 {items.map((item) => (
                     <DomainTable key={item.id} item={item}/>
                     ))}
+                <div className={style.pagination}>
+                        <Pagination pagination={{page, setPage}}/>
+                </div>
             </div>
+
         </>
     )
 

@@ -1,20 +1,30 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import api from "../shared/axios.js";
 const BASE_URL = import.meta.env.VITE_API_URL
 
+
+
+export const delDomainThunk = createAsyncThunk(
+    "domains/delete",
+    async (id) => {
+        const response  = await api.delete(`${BASE_URL}/domains/${id}`, );
+        return id
+    }
+)
 
 
 export const addDomainThunk = createAsyncThunk(
     "domains/add",
         async (domain) => {
-           const response =  await fetch(`${BASE_URL}/domains`,{
-                method: "POST",
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({domain, status:"pending", days_left: null, expires_at: null, issuer: null })
-            })
-            if(!response.ok){
-                throw new Error("Could not add domain thunk");
-            }
-            return response.json()
+            const response  = await api.post(`${BASE_URL}/domains`, {
+                domain: domain,
+                status:"pending",
+                days_left: null,
+                expires_at: null,
+                issuer: null
+            });
+
+            return response.data
         }
 )
 
@@ -22,19 +32,10 @@ export const addDomainThunk = createAsyncThunk(
 export const domainsThink = createAsyncThunk(
     "domains/domain",
     async(page) => {
-                const responce = await fetch(`${BASE_URL}/domains?_page=${page}&_per_page=3`,{
-                method: "GET",
-                headers:{ 'Content-Type': 'application/json' },
-            },
-        )
-        if(!responce.ok){
-            return "ERROR: No responce found.";
-        }
-
-        return await responce.json()
+            const responce = await api.get(`${BASE_URL}/domains?_page=${page}&_per_page=3`,)
+        return responce.data
     }
 )
-
 export const domainsSlice = createSlice({
     name: "domains",
     initialState: {
@@ -63,17 +64,17 @@ export const domainsSlice = createSlice({
                     ...action.payload,
                     domain: action.meta.arg
                 }
-
                 state.items.unshift(newDomain)
-
+            })
+            .addCase(delDomainThunk.fulfilled, (state, action) => {
+                const id = action.payload
+                state.items = state.items.filter(e => e.id !== id)
             })
             .addCase(domainsThink.rejected, (state, action) => {
             state.loading = false;
             state.error = "ERROR"
             })
     }
-
-
 })
 
 export default domainsSlice.reducer;

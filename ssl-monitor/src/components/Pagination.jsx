@@ -29,9 +29,9 @@ const Pagination = (props) => {
                 <button onClick={backPage} disabled={props.pagination.page === 1}>назад</button>
                 {pages.map((page) => {
                     if(page === props.pagination.page){
-                        return(<div style={{fontWeight:900}}>{page}</div>)
+                        return(<div key={page} style={{fontWeight:900}}>{page}</div>)
                     }else{
-                        return(<div>{page}</div>)
+                        return(<div key={page}>{page}</div>)
                     }
                 })}
                 <button onClick={nextPage} disabled={props.pagination.page >= countItems}>вперёд</button>

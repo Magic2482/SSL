@@ -9,3 +9,14 @@ table th{
    border-right: 1px solid #000;
     border-bottom: 1px solid #000;
 }
+
+.confirm{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    background-color: #8c8c8c;
+    right:1px ;
+    text-align: center;
+    padding-top: 200px;
+    font-size: 40px;
+}

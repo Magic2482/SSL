@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import api from '../shared/axios.js'
 
 
 const BASE_URL = import.meta.env.VITE_API_URL;
@@ -6,21 +7,16 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 export const loginThunk = createAsyncThunk(
     'auth/login',
     async ({ email, password }, { rejectWithValue }) => {
-
-        await fetch(`${BASE_URL}/user`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(),
+        const response = await api.post(`${BASE_URL}/user`, {
+            email,
+            password
         })
-        if (!email || !password) {
-            throw rejectWithValue('Email и пароль обязательны');
-        }
         return {
-            token: 'mock-token-123',
-            user: {
-                id: 1,
-                name: 'Admin',
-                email: email
+            token: "mock-token-123",
+            user:{
+                "id": 1,
+                "name": "Admin",
+                "email": "admin@example.com"
             }
         };
     }

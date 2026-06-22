@@ -23,7 +23,6 @@ const Pagination = (props) => {
         }
 
     }
-debugger
     return(
         <>
             <div className={style.pagination}>

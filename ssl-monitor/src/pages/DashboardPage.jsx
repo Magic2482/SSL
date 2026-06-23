@@ -40,6 +40,7 @@ const DashboardPage = () =>{
             <div className={style.box}>
                 {items.length === 0 ? <div>Доменов нет</div> : (
                     <table>
+                        <thead>
                         <tr>
                             <th>Домен</th>
                             <th>Статус</th>
@@ -47,6 +48,7 @@ const DashboardPage = () =>{
                             <th>Дней осталось</th>
                             <th>Действие</th>
                         </tr>
+                        </thead>
                     </table>)}
                 {items.map((item) => (
                     <DomainTable key={item.id} item={item}/>

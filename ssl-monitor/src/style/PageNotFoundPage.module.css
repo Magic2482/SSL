@@ -1,0 +1,16 @@
+.box{
+    text-align: center;
+}
+
+.Error{
+    margin-top:300px;
+    color:red;
+    font-size: 40px;
+}
+
+.buttonLogin{
+    color: #ffebeb;
+    font-size: 40px;
+   text-decoration: none;
+}
+

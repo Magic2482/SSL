@@ -3,7 +3,7 @@ import style from '../style/login.module.css'
 import {useDispatch} from 'react-redux'
 import {loginThunk, setCredentials} from "../store/authSlice.js";
 import {useNavigate} from "react-router-dom";
-import {Header} from "../components/header.jsx";
+import { Header } from "../components/header.jsx";
 
 export let  LoginPage = (props) => {
     const [email, setEmail] = useState('');

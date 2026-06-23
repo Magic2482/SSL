@@ -4,12 +4,6 @@ import style from "../style/header.module.css"
 import {useSelector} from "react-redux";
 
 export const Header = () => {
-    const email = useSelector(state => state.auth.user?.email);
-    const dispatch = useDispatch();
-    const handle = () => {
-        dispatch(logout())
-    }
-
     return (
         <>
             <div className={style.header}>
@@ -20,8 +14,8 @@ export const Header = () => {
 }
 
 export const HeaderProfil = () => {
-    const email = useSelector(state => state.auth.user?.email);
     const dispatch = useDispatch();
+    const email = useSelector(state => localStorage.user);
     const handle = () => {
         dispatch(logout())
     }

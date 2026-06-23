@@ -4,20 +4,21 @@ import {LoginPage} from "./pages/LoginPage.jsx";
 import Dashboard from "./pages/DashboardPage.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import PageNotFoundPage from "./pages/NotFoundPage.jsx";
-import {Header} from "./components/header.jsx";
-import {HeaderProfil} from "./components/header.jsx";
+import {useSelector} from "react-redux";
 
 function App() {
+    const token = useSelector(state => localStorage)
+
   return (
       <BrowserRouter>
    <Routes>
 
-     <Route path="/login" element={<LoginPage/>} />
-
+     <Route path="/" element={<LoginPage/>} />
+       <Route path="/login" element={<LoginPage/>} />
      <Route path="/dashboard"
      element={
          <ProtectedRoute>
-                <Dashboard />
+             {token !== null ? <Dashboard /> : <LoginPage/>}
          </ProtectedRoute>
      } />
 

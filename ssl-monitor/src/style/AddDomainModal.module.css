@@ -40,3 +40,49 @@
     margin: 0 100px;
 
 }
+
+@media (max-width: 480px) {
+
+    .box{
+        position: absolute;
+        width: 600px;
+        height: 1000px;
+        top: 0;
+        background-color: rgba(9, 9 ,9, 0.7);
+        z-index: 10;
+    }
+
+    .form{
+        position: relative;
+        width: 300px;
+        height: 400px;
+        border-radius: 20px;
+        background: #9f9f9f;
+        margin: 0 auto;
+        margin-top: 200px;
+        margin-right: 290px;
+    }
+    .domainInput{
+        position: absolute;
+        border: none;
+        background: #ffffff;
+        border-radius: 0px;
+        width: 200px;
+        margin-bottom: 200px;
+        margin-left: 50px;
+    }
+    .form div{
+        position: relative;
+        top:150px;
+        width: 150px;
+        margin: 0 100px;
+        margin-right: 200px;
+    }
+    .form button{
+        position: relative;
+        top:160px;
+        width: 100px;
+        margin: 0 20px;
+        margin-left: 30px;
+    }
+}

@@ -1,6 +1,22 @@
 {
   "domains": [
     {
+      "id": "1",
+      "domain": "google.com",
+      "status": "valid",
+      "expires_at": "2025-12-01",
+      "issuer": "Google Trust",
+      "days_left": 180
+    },
+    {
+      "id": "2",
+      "domain": "expired-site.com",
+      "status": "expired",
+      "expires_at": "2024-01-15",
+      "issuer": "Let's Encrypt",
+      "days_left": -140
+    },
+    {
       "id": "3",
       "domain": "expiring-soon.ru",
       "status": "expiring_soon",
@@ -17,20 +33,12 @@
       "days_left": null
     },
     {
-      "domain": "asdasa.dfggf",
-      "status": "pending",
-      "days_left": null,
+      "id": "5",
+      "domain": "broken-site.net",
+      "status": "error",
       "expires_at": null,
       "issuer": null,
-      "id": "FteNqYnK8lU"
-    },
-    {
-      "domain": "asdsa.fdggdf",
-      "status": "pending",
-      "days_left": null,
-      "expires_at": null,
-      "issuer": null,
-      "id": "pBQE5Ho9H58"
+      "days_left": null
     }
   ],
   "user": [
@@ -38,6 +46,167 @@
       "id": "1",
       "name": "Admin",
       "email": "admin@example.com"
+    },
+    {
+      "email": "выф\"@sadada",
+      "password": "adsasdas",
+      "id": "sg5-BdDoUxQ"
+    },
+    {
+      "email": "asd@asda",
+      "password": "dasd",
+      "id": "OwXMKGa0ppY"
+    },
+    {
+      "email": "sadsada@",
+      "password": "sdada",
+      "id": "le3Q6-60S7o"
+    },
+    {
+      "email": "asdsaa@sadas",
+      "password": "asdsa",
+      "id": "yRD7qJhtsHY"
+    },
+    {
+      "email": "asdasa@sadasd",
+      "password": "asd",
+      "id": "PQxczHznWvE"
+    },
+    {
+      "email": "asdasd@sad",
+      "password": "asda",
+      "id": "kEUG_57jHYU"
+    },
+    {
+      "email": "dasas21S@s",
+      "password": "asd",
+      "id": "a-2BrpmX3YU"
+    },
+    {
+      "email": "амиваи@asd",
+      "password": "asd",
+      "id": "-MN9VLdRt5c"
+    },
+    {
+      "email": "asda@sadas",
+      "password": "asdsa",
+      "id": "2iJaiNH8zyE"
+    },
+    {
+      "email": "asdasda@sadas",
+      "password": "asda",
+      "id": "Sn8GlaShsQg"
+    },
+    {
+      "email": "asdsa@sadad",
+      "password": "saddad",
+      "id": "hVob91YcBO8"
+    },
+    {
+      "email": "ываа\"выва@sad",
+      "password": "asdad",
+      "id": "4FOFoB7cx4w"
+    },
+    {
+      "email": "artemsaulyak321@gmail.com",
+      "password": "asdasa",
+      "id": "7kAm6T5uWgE"
+    },
+    {
+      "email": "artemsaulyak321@gmail.com",
+      "password": "asdada@",
+      "id": "0fLiqIVg6eY"
+    },
+    {
+      "email": "dsadasd@sadasd",
+      "password": "asdas",
+      "id": "IhxqYpZk7wA"
+    },
+    {
+      "email": "sada@sad",
+      "password": "asda",
+      "id": "XQtUtBamqHY"
+    },
+    {
+      "email": "asdasD@",
+      "password": "sadas",
+      "id": "X4EITCFZ7qI"
+    },
+    {
+      "email": "asdsad@sadas",
+      "password": "dasd",
+      "id": "ks3gPzBxeuE"
+    },
+    {
+      "email": "фывыфвф\"@sdsadd",
+      "password": "asdasd",
+      "id": "UchzgsdIWms"
+    },
+    {
+      "email": "asdas@sada",
+      "password": "sad",
+      "id": "_PwBKiC7Ya0"
+    },
+    {
+      "email": "adasd@sda",
+      "password": "asd",
+      "id": "zeHG4JQPZnU"
+    },
+    {
+      "email": "asdsasa@sad",
+      "password": "asdsaasd",
+      "id": "ixI2CMG0ZSg"
+    },
+    {
+      "email": "asdad2@sd",
+      "password": "sadsasad",
+      "id": "LaNgJHCwIOk"
+    },
+    {
+      "email": "sdasa@sadsad",
+      "password": "asdasd",
+      "id": "mQfbuyim778"
+    },
+    {
+      "email": "artemsaulyak321@gmail.com",
+      "password": "фывфыв",
+      "id": "owwdzD3fJwg"
+    },
+    {
+      "email": "фыввыф2@sad",
+      "password": "asda",
+      "id": "F2ngluP64TI"
+    },
+    {
+      "email": "sdasd@sda",
+      "password": "asda",
+      "id": "OJDwgLIWbwY"
+    },
+    {
+      "email": "artemsaulyak321@gmail.com",
+      "password": "asdsa",
+      "id": "PYFep45l08E"
+    },
+    {
+      "email": "artemsaulyak321@gmail.com",
+      "password": "dxczxcz",
+      "id": "OwMR1cqPYuw"
+    },
+    {
+      "email": "artemsaulyak321@gmail.com",
+      "password": "fdgdfg",
+      "id": "Zc4uWTk6c7g"
+    },
+    {
+      "email": "dfgdfg@sadasas",
+      "password": "dasda",
+      "id": "RzZ5ptTVLDQ"
+    },
+    {
+      "email": "artemsaulyak321@gmail.com",
+      "password": "asda",
+      "id": "lX0q8vOilV4"
     }
-    ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -2,12 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../shared/axios.js'
 
 
-const BASE_URL = import.meta.env.VITE_API_URL;
+
 
 export const loginThunk = createAsyncThunk(
     'auth/login',
     async ({ email, password }, { rejectWithValue }) => {
-        const response = await api.post(`${BASE_URL}/user`, {
+        const response = await api.post(`/user`, {
             email,
             password
         })
@@ -51,10 +51,10 @@ const authSlice = createSlice({
                 state.error = null;
             })
             .addCase(loginThunk.fulfilled, (state, action) => {
-                state.loading = true;
                 const { user, token } = action.payload;
                 localStorage.setItem('token', token);
                 state.token = token;
+                state.loading = false;
             })
             .addCase(loginThunk.rejected, (state, action) => {
                 state.loading = false;

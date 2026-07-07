@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 import style from '../style/login.module.css'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {loginThunk, setCredentials} from "../store/authSlice.js";
 import {useNavigate} from "react-router-dom";
 import { Header } from "../components/header.jsx";
+import { useLocation } from 'react-router-dom';
 
 export let  LoginPage = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState();
+    const loading = useSelector(state => state.auth.loading);
+    const location = useLocation();
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -47,8 +49,7 @@ export let  LoginPage = (props) => {
             setError('В адресе должен быть символ @')
             return 0;
         }
-        try {
-            setLoading("loading...")
+        try {                                                   
             const resultAction = await dispatch(loginThunk({email, password})).unwrap();
             const {user, token} = resultAction
 
@@ -60,20 +61,33 @@ export let  LoginPage = (props) => {
         catch(err){
             setError(err.message || 'ошибка при входе')
         }
+    }                             
+
+    if(loading){
+        return (
+            <>
+                <Header/>
+                <div className={style.container}>
+                    <div className={style.formLogin}>
+                     <span>LOADING...</span>
+                    </div>
+                </div>
+            </>
+        )
     }
 
 
 
     return(
         <>
-            <Header/>
-            <div className={style.container}>
+            <Header />
+            <div  className={style.container}>
                 <div className={style.userLogin}>LOGIN</div>
                 <div className={style.formLogin}>
                     <form onSubmit={handleSubmit} noValidate>
                         <input type="email" value={email} onDoubleClick={clearInputEmail} placeholder='Email' onChange={handleSubmitEmail} required />
                         <input placeholder='Password'  type={"password"} onDoubleClick={clearInputPassword } value={password}  onChange={handleSubmitPassword}/><br/>
-                    <button type="submit" disabled={loading}>{loading ? loading  : "войти"}</button>
+                    <button type="submit" >Войти </button>
                     <div className={style.error}>{error}</div>
                     </form>
                 </div>

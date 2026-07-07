@@ -1,11 +1,14 @@
 .table {
     table-layout: fixed;
 }
-table th{
+table td{
     width: 25%;
+
 }
 
-.table th{
+.table td{
+    text-align: center;
+    font-weight: bold;
    border-right: 1px solid #000;
     border-bottom: 1px solid #000;
 }
@@ -20,3 +23,4 @@ table th{
     padding-top: 200px;
     font-size: 40px;
 }
+

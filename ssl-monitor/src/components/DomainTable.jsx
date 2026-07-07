@@ -24,17 +24,13 @@ import {delDomainThunk} from "../store/domainsSlice.js";
      }
      return (
          <>
-             <table className={style.table}>
-                 <thead>
-                    <tr>
-                        <th>{props.item.domain}</th>
-                        <th><StatusBadge item={props.item.status}/></th>
-                        <th>{props.item.expires_at ? RuData : '-'}</th>
-                        <th>{props.item.days_left ? props.item.days_left : '-'}</th>
-                        <th><button onClick={confirm}>Удалить</button></th>
+                    <tr className={style.table}>
+                        <td>{props.item.domain}</td>
+                        <td><StatusBadge item={props.item.status}/></td>
+                        <td>{props.item.expires_at ? RuData : '-'}</td>
+                        <td>{props.item.days_left ? props.item.days_left : '-'}</td>
+                        <td><button onClick={confirm}>Удалить</button></td>
                     </tr>
-                 </thead>
-             </table>
              {Confirm ? <>
                  <div className={style.confirm}>
                      <div> Удалить домен {props.item.domain}?</div>

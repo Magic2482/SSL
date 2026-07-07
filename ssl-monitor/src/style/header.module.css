@@ -1,6 +1,6 @@
 .header{
     align-items: center;
-    width: 1400px;
+    width: 800px;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -10,6 +10,25 @@
     color: #d98512;
 }
 
-.header button {
-
+@media (max-width: 1000px) {
+    .header{
+        align-items: center;
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
 }
+
+@media (max-width: 480px) {
+    .header{
+        align-items: center;
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+}
+
+
+

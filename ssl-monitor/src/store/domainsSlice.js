@@ -1,13 +1,12 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import api from "../shared/axios.js";
-const BASE_URL = import.meta.env.VITE_API_URL
 
 
 
 export const delDomainThunk = createAsyncThunk(
     "domains/delete",
     async (id) => {
-        const response  = await api.delete(`${BASE_URL}/domains/${id}`, );
+        const response  = await api.delete(`/domains/${id}`, );
         return id
     }
 )
@@ -16,7 +15,7 @@ export const delDomainThunk = createAsyncThunk(
 export const addDomainThunk = createAsyncThunk(
     "domains/add",
         async (domain) => {
-            const response  = await api.post(`${BASE_URL}/domains`, {
+            const response  = await api.post(`/domains`, {
                 domain: domain,
                 status:"pending",
                 days_left: null,
@@ -32,7 +31,7 @@ export const addDomainThunk = createAsyncThunk(
 export const domainsThink = createAsyncThunk(
     "domains/domain",
     async(page) => {
-            const responce = await api.get(`${BASE_URL}/domains?_page=${page}&_per_page=3`,)
+            const responce = await api.get(`/domains?_page=${page}&_per_page=3`,)
         return responce.data
     }
 )

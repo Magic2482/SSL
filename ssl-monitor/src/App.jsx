@@ -7,14 +7,13 @@ import PageNotFoundPage from "./pages/NotFoundPage.jsx";
 import {useSelector} from "react-redux";
 
 function App() {
-    const token = useSelector(state => localStorage)
-
+    const token = useSelector(state => state.auth.token)
   return (
       <BrowserRouter>
    <Routes>
 
      <Route path="/" element={<LoginPage/>} />
-       <Route path="/login" element={<LoginPage/>} />
+       <Route path="/login" element={<LoginPage key="login"/>} />
      <Route path="/dashboard"
      element={
          <ProtectedRoute>

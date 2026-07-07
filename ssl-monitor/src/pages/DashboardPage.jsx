@@ -32,13 +32,14 @@ const DashboardPage = () =>{
 
     )
     if(error) return <div>{error}</div>
+
     return(
         <>
             <HeaderProfil/>
             <div className={style.text}>SSL Monitor </div>
             {isModalOpen ? <AddDomainModal props={{Close, isModalOpen, setIsModalOpen}}/> : false}
             <div className={style.box}>
-                {items.length === 0 ? <div>Доменов нет</div> : (
+
                     <table>
                         <thead>
                         <tr>
@@ -49,11 +50,14 @@ const DashboardPage = () =>{
                             <th>Действие</th>
                         </tr>
                         </thead>
-                    </table>)}
+                    <tbody>
                 {items.map((item) => (
                     <DomainTable key={item.id} item={item}/>
                 ))}
-                <div >
+                    </tbody>
+                </table>
+
+                <div>
                     <button onClick={() => {setIsModalOpen(true)}}>Добавить домен</button>
 
                 </div>

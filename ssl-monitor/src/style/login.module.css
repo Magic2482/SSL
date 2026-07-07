@@ -1,6 +1,8 @@
 
 body{
     background: radial-gradient(circle at center, #47a9c2 0%, #000000 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container{
@@ -26,8 +28,6 @@ body{
     background: rgba(20, 24, 26, 0.3);
     padding: 80px 50px;
     border-radius: 10px;
-
-
 }
 
 input{
@@ -49,7 +49,142 @@ input{
 }
 
 .error{
-
     font-family: Cambria;
     color: red;
+}
+
+.formLogin span{
+    color: #ec9525;
+    font-size: 50px;
+}
+
+
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 40px 15px 20px 15px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .userLogin {
+        color: white;
+        font-weight: 900;
+        font-size: 28px;
+        font-family: Inter, Arial, sans-serif;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .formLogin form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(20, 24, 26, 0.3);
+        padding: 80px 25px 35px 25px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .formLogin span {
+        color: #ec9525;
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px 20px;
+        margin-bottom: 12px;
+        background: #bebebe;
+        border-radius: 30px;
+        border: 1px solid #ffffff;
+        font-size: 16px;
+        color: #333;
+        box-sizing: border-box;
+    }
+
+    input::placeholder {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .formLogin button {
+        width: 100%;
+        padding: 14px 20px;
+        background: #ffffff;
+        border: none;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: Inter, Arial, sans-serif;
+        color: #333;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        box-sizing: border-box;
+        /* Убираем padding: 20px 200px */
+    }
+
+    .formLogin button:active {
+        background: #f0f0f0;
+        transform: scale(0.98);
+    }
+
+    .error {
+        font-size: 14px;
+        font-family: Cambria, serif;
+        color: red;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .formLogin a {
+        color: #ffffff;
+        font-size: 14px;
+        margin-top: 15px;
+        text-decoration: none;
+        opacity: 0.8;
+    }
+
+    .formLogin a:active {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .userLogin {
+        font-size: 22px;
+    }
+
+    .formLogin form {
+        padding: 80px 15px 25px 15px;
+    }
+
+    .formLogin span {
+        font-size: 32px;
+    }
+
+    input {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .formLogin button {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+
+    .error {
+        font-size: 12px;
+    }
 }
